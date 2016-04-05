@@ -1,3 +1,3 @@
-# BayesianCoordinateDescent
+# BlockCoordinateDescent
 
-[![Build Status](https://travis-ci.org/dmbates/BayesianCoordinateDescent.jl.svg?branch=master)](https://travis-ci.org/dmbates/BayesianCoordinateDescent.jl)
+[![Build Status](https://travis-ci.org/Stat990-033/BlockCoordinateDescent.jl.svg?branch=master)](https://travis-ci.org/Stat990-033/BlockCoordinateDescent.jl)
