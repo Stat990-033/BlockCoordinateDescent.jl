@@ -67,14 +67,14 @@ function multinomialOptim(X,beta,z)
   function gradientClosure(beta)
     return(multinomialGradient(X,beta,z))
   end
-  opt = Opt(:LD_LBFGS, length(beta))
+  opt = NLopt.Opt(:LD_LBFGS, length(beta))
   function f(beta,grad)
     grad[:]=-gradientClosure(beta)
     val=-loglikeClosure(beta)
     return(val)
   end
-  min_objective!(opt, f)
-  (optf,optx,ret) = optimize(opt,vec(beta))
+  NLopt.min_objective!(opt, f)
+  (optf,optx,ret) = NLopt.optimize(opt,vec(beta))
   k=size(z)[2]
   p=size(X)[2]
   beta=reshape(optx,p,k)

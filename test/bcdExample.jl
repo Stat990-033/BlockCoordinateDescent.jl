@@ -1,6 +1,4 @@
 using Distributions
-include("bcd.jl")
-using ProfileView
 ##################
 #basically plumbing to generate a multinomial problem with the setup given below
 #predictor matrix, p>n
@@ -17,7 +15,7 @@ X[:,1]=1
 beta=zeros(num,4)
 beta[1:10,:]=(rand(4*10)-1/2)*3
 Xbeta=X*beta
-probs=multProbPrecompute(Xbeta)
+probs = BlockCoordinateDescent.multProbPrecompute(Xbeta)
 
 #simulate response
 z=zeros(n,4)
